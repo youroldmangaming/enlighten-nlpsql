@@ -137,8 +137,6 @@ curl -X POST http://localhost:4000/query \
 │       ├── schema.js          # PocketBase schema introspection
 │       ├── db.js              # Read-only SQLite query runner
 │       └── metabase.js        # Metabase API client
-├── HAL9000/                   # AI assistant service
-├── gameserver/                # Game backend service
 └── pocketbase_public/         # Static files served by PocketBase
 ```
 
