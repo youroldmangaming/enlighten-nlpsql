@@ -1,0 +1,58 @@
+services:
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    container_name: pocketbase
+    restart: unless-stopped
+    ports:
+      - "88:8090"
+    volumes:
+      - ./pocketbase_data:/pb_data
+      - ./pocketbase_public:/pb_public
+
+
+
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./metabase_data:/metabase-data
+      - ./pocketbase_data:/pb_data:ro
+    environment:
+      - MB_DB_TYPE=h2
+      - MB_DB_FILE=/metabase-data/metabase.db
+    depends_on:
+      - pocketbase
+
+
+
+  nlsql:
+    build:
+      context: ./NLSQL
+      dockerfile: Dockerfile
+    container_name: nlsql
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - OLLAMA_HOST=http://192.168.188.49:11434
+      - OLLAMA_MODEL=llama3.2:3b              # change to your pulled model
+      - DB_PATH=/pb_data/data.db
+      - METABASE_URL=http://192.168.188.25:3000
+      - METABASE_USER=youroldmangaming@gmail.com  # your Metabase admin email
+      - METABASE_PASS=141167@Sg        # your Metabase admin password
+      - METABASE_DB_ID=2
+    volumes:
+      - ./pocketbase_data:/pb_data:ro
+    depends_on:
+      - pocketbase
+      - metabase
+
+
+
+
+
