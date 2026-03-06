@@ -31,8 +31,7 @@ User question → nlsql → Ollama (LLM) → SQL → PocketBase SQLite → Metab
 | [Metabase](https://metabase.com) | Analytics dashboards and chart rendering |
 | [nlsql](./NLSQL) | Natural language → SQL engine (Node.js) |
 | [Ollama](https://ollama.com) | Local LLM inference (external machine) |
-| HAL9000 | AI chat assistant |
-| Gameserver | Game backend |
+
 
 ---
 
