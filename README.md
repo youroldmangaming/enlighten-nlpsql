@@ -146,7 +146,7 @@ curl -X POST http://localhost:4000/query \
 
 | Variable | Service | Description |
 |---|---|---|
-| `OLLAMA_HOST` | nlsql, hal9000 | Ollama API URL |
+| `OLLAMA_HOST` | nlsql | Ollama API URL |
 | `OLLAMA_MODEL` | nlsql | Model name (`ollama list` to check) |
 | `DB_PATH` | nlsql | Path to SQLite file inside container |
 | `METABASE_URL` | nlsql | Metabase base URL from container |
