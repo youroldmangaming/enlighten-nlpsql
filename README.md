@@ -1,5 +1,7 @@
 # Enlighten
 
+<img width="1783" height="1030" alt="image" src="https://github.com/user-attachments/assets/39056ebb-6ce4-4deb-92e1-18301fceba47" />
+
 **Ask plain English questions about your data. Get instant answers with charts.**
 
 Enlighten is a self-hosted data intelligence platform that connects a natural language interface to your PocketBase database. Type a question, get a visualised answer powered by Metabase — no SQL required.
